@@ -20,9 +20,6 @@ body {
     font-size: 16px;
     line-height: 1.5;
     font-family: "Outfit", sans-serif;
-    background-color: var(--white);
-    display: flex;
-    flex-direction: column;
 }
 
 h1 {
@@ -83,6 +80,11 @@ table {
 }
 
 /* main styling */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
     max-width: 375px;
     margin: 0 auto;
@@ -132,8 +134,22 @@ table tr:last-child td {
 
 /* Large screen */
 @media screen and (min-width: 376px) {
-    .container {
+    body {
+        background-color: var(--stone-100);
+    }
+
+    .wrapper {
+        width: 100%;
         max-width: 1440px;
+        margin: 4rem auto;
+        background-color: var(--white);
+        padding: 2rem;
+
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
     }
 
 }
