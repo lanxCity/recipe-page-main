@@ -90,7 +90,7 @@ table {
 .container {
     display: flex;
     flex-direction: column;
-    max-width: 375px;
+    /* max-width: 375px; */
     margin: 0 auto;
     background-color: var(--white);
 }
@@ -134,7 +134,7 @@ table tr:last-child td {
 }
 
 /* Large screen */
-@media screen and (min-width: 376px) {
+@media screen and (min-width: 600px) {
     .wrapper {
         display: flex;
         justify-content: center;
@@ -142,9 +142,9 @@ table tr:last-child td {
     }
 
     .container {
-        max-width: 960px;
-        /* Ensures no overflow on small screens */
         width: calc(100% - 2rem);
+        max-width: 860px;
+        /* Ensures no overflow on small screens */
         margin: 4rem auto;
         padding: 2rem;
         border-radius: 1rem;
