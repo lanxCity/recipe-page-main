@@ -20,6 +20,12 @@ body {
     font-size: 16px;
     line-height: 1.5;
     font-family: "Outfit", sans-serif;
+    background-color: var(--stone-100);
+}
+
+h1,
+h3 {
+    font-family: "Young Serif", serif;
 }
 
 h1 {
@@ -30,17 +36,9 @@ h1 {
     color: var(--stone-900);
 }
 
-h1,
-h3 {
-    font-family: "Young Serif", sans-serif;
-}
 
 h3 {
     font-size: 2rem;
-}
-
-h3,
-span.brown {
     color: var(--brown-800);
     margin-bottom: 1rem;
 }
@@ -51,18 +49,25 @@ h3.rose {
     font-size: 1.5rem;
 }
 
+span.brown {
+    color: var(--brown-800);
+
+}
+
+
 span.bold {
     font-weight: 700;
 }
 
 ul,
 ol {
-    /* Must be 'outside' (default) before there can be space btw the bullet and content */
+    /* Default 'outside' ensures bullet/number alignment with text */
     list-style-position: outside;
+    padding-left: 2rem;
 }
 
 li {
-    margin: 1rem;
+    margin: 1rem 0;
     font-size: 1.2rem;
     padding-left: 2rem;
 }
@@ -70,7 +75,8 @@ li {
 header,
 section,
 .attribution {
-    margin-top: 3rem;
+    background-color: var(--white);
+    padding: 2rem;
 }
 
 p,
@@ -80,28 +86,23 @@ table {
 }
 
 /* main styling */
-.wrapper {
-    display: flex;
-    flex-direction: column;
-}
 
 .container {
+    display: flex;
+    flex-direction: column;
     max-width: 375px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    background-color: var(--white);
 }
-
 
 .preparation {
     background-color: var(--rose-50);
-    padding: 2rem;
     border-radius: 10px;
 }
 
 .ingredients,
 .instructions {
     border-bottom: 2px solid var(--stone-150);
-    padding-bottom: 1.5rem;
 }
 
 table {
@@ -113,8 +114,8 @@ table {
 
 table td {
     border-bottom: 2px solid var(--stone-150);
-    margin-bottom: 1rem;
     padding: 0 2rem 1rem;
+    /* Consistent spacing */
 
 }
 
@@ -134,22 +135,34 @@ table tr:last-child td {
 
 /* Large screen */
 @media screen and (min-width: 376px) {
-    body {
-        background-color: var(--stone-100);
-    }
-
     .wrapper {
-        width: 100%;
-        max-width: 1440px;
-        margin: 4rem auto;
-        background-color: var(--white);
-        padding: 2rem;
+        display: flex;
+        justify-content: center;
 
     }
 
     .container {
-        max-width: 100%;
-        padding: 0;
+        max-width: 960px;
+        /* Ensures no overflow on small screens */
+        width: calc(100% - 2rem);
+        margin: 4rem auto;
+        padding: 2rem;
+        border-radius: 1rem;
     }
 
+
+    #logo {
+        border-radius: 10px;
+    }
+
+    header,
+    section,
+    .attribution {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .preparation {
+        padding: 2rem;
+    }
 }
